@@ -1,4 +1,4 @@
-# 🎥 OnlyUs - Connect with Strangers via Video & Chat
+##### 🎥 OnlyUs - Connect with Strangers via Video & Chat
 
 OnlyUs is a real-time video chat platform that connects strangers from around the world. Users can join based on shared interests and communicate through live webcam and text chat. The platform offers a smooth, black-themed interface with purple accents for a sleek and modern look.
 
@@ -21,17 +21,15 @@ OnlyUs is a real-time video chat platform that connects strangers from around th
 - 🔁 WebRTC signaling for real-time P2P video/audio streaming
 - 📡 Socket.io for chat, connect/disconnect, and signaling messages
 
----
+------------------------------------------------------------------------------
 
 ## 📁 Project Structure
 
 onlyus/ │ ├── onlyus-frontend/ # React frontend │ ├── public/ │ └── src/ │ ├── components/ │ ├── pages/ │ └── App.js │ └── onlyus-backend/ # Node.js backend ├── server.js └── matchmaker.js
 
-yaml
-Copy
-Edit
 
----
+
+------------------------------------------------------------------------------
 
 ## ⚙️ Getting Started
 
@@ -44,7 +42,7 @@ Edit
 
 ### 🖥️ Frontend Setup (React)
 
-```bash
+---bash
 # Navigate to frontend
 cd onlyus/onlyus-frontend
 
@@ -53,12 +51,13 @@ npm install
 
 # Start the dev server
 npm start
-Runs on http://localhost:3000
 
-🔧 Backend Setup (Node.js)
-bash
-Copy
-Edit
+
+
+###Runs on http://localhost:3000
+
+###🔧 Backend Setup (Node.js)
+
 # Navigate to backend
 cd onlyus/onlyus-backend
 
@@ -67,9 +66,10 @@ npm install
 
 # Start the server
 npm run dev
-Backend runs on http://localhost:5000
 
-🛜 How It Works
+###Backend runs on http://localhost:5000
+
+###🛜 How It Works
 User lands on the homepage and selects their interest tags.
 
 Clicking GoOnlyUs requests camera/mic permissions.
@@ -80,10 +80,10 @@ Once paired, WebRTC connects both peers for live video/audio.
 
 Users can chat via text and click Next to skip to a new stranger.
 
-📸 Screenshots
+###📸 Screenshots
 Coming soon... (Add screenshots or GIF demos here once your UI is polished)
 
-🧪 Tech Stack
+###🧪 Tech Stack
 Technology	Usage
 React.js	Frontend UI
 React Router	Navigation between pages
@@ -92,44 +92,47 @@ WebRTC	Peer-to-peer video/audio calls
 Node.js	Backend server
 Express.js	HTTP server for API & Socket.io
 CORS	Handles cross-origin requests
-🔐 Environment Variables
-Create a .env file in your onlyus-backend folder with the following (if needed):
 
-env
-Copy
-Edit
+
+###🔐 Environment Variables
+#Create a .env file in your onlyus-backend folder with the following (if needed):
 PORT=5000
-🧰 Available Scripts
-Frontend
-Script	Description
+
+###🧰 Available Scripts
+##Frontend
+#Script	#Description
 npm start	Starts dev server
 npm run build	Builds optimized production app
-Backend
-Script	Description
+
+
+###Backend
+#Script	#Description
 npm run dev	Starts server with Nodemon
 npm start	Starts server (without reloads)
-🤝 Contributing
+
+
+###🤝 Contributing
 Pull requests are welcome! If you want to contribute:
 
-Fork the project
+1. Fork the project
 
-Create a feature branch: git checkout -b feature-name
+2. Create a feature branch: git checkout -b feature-name
 
-Commit changes: git commit -m "Added feature"
+3. Commit changes: git commit -m "Added feature"
 
-Push to your branch: git push origin feature-name
+4. Push to your branch: git push origin feature-name
 
-Open a pull request on GitHub
+5. Open a pull request on GitHub
 
-🛡️ License
-This project is licensed under the MIT License.
+###🛡️ License
+This project is not licensed.
 
-📫 Contact
+###📫 Contact
 Built with ❤️ by G Chaitanya Naga Sai
 
-🌐 GitHub: https://github.com/Chaitanya1436
+##🌐 GitHub: https://github.com/Chaitanya1436
 
-📧 Email: chaitanya.24085@gmail.com
+##📧 Email: chaitanya.24085@gmail.com
 
-💼 LinkedIn: https://www.linkedin.com/in/g-chaitanya-naga-sai-3b525a274
+##💼 LinkedIn: https://www.linkedin.com/in/g-chaitanya-naga-sai-3b525a274
 
