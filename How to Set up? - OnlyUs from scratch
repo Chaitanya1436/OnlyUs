@@ -11,7 +11,7 @@ Create a new folder called onlyus (this will be our main project folder).
 Open a terminal (Command Prompt / PowerShell / VS Code Terminal).
 
 ⚙️ Step 2: Set Up the Backend (Node.js + Socket.io)
----
+---------------------------------------------------------------------------------------------
 ##📁 Create the Backend Folder
 In the terminal, run:
 
@@ -42,7 +42,7 @@ Run:
 1.Inside /backend, create a new file called server.js.
 2.Open server.js in a code editor (VS Code, Sublime, etc.).
 Paste this code:
----
+---------------------------------------------------------------------------------------------
 
 const express = require('express');
 const http = require('http');
@@ -257,7 +257,7 @@ function findRandomMatch(user) {
   
   return null;
 }
----
+---------------------------------------------------------------------------------------------
 
 
 
@@ -281,7 +281,7 @@ Run: npm install react-router-dom socket.io-client
 
 ##📄 Modify src/App.js
 Open /frontend/src/App.js and replace its content with:
----
+---------------------------------------------------------------------------------------------
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
@@ -354,14 +354,14 @@ input:focus, select:focus {
   border-color: #8c52ff;
   outline: none;
 }
----
+---------------------------------------------------------------------------------------------
 
 ##📂 Create the components Folder
 Inside /frontend/src, create a new folder called components.
 
 ##📄 Create Home.js (Landing Page)
 Inside /frontend/src/components, create Home.js and paste:
----
+---------------------------------------------------------------------------------------------
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Home.css';
@@ -890,10 +890,10 @@ const VideoChat = () => {
 };
 
 export default VideoChat;
----
+---------------------------------------------------------------------------------------------
 
 ##Create VideoChat.css and paste:
----
+---------------------------------------------------------------------------------------------
 .video-chat-container {
   display: grid;
   grid-template-rows: 1fr auto;
@@ -1071,11 +1071,11 @@ video {
 .home-button {
   background-color: #333;
 }
----
+---------------------------------------------------------------------------------------------
 
 
 ###Update index.js - Replace content with:
----
+---------------------------------------------------------------------------------------------
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -1087,9 +1087,10 @@ root.render(
     <App />
   </React.StrictMode>
 );
----
-
-
+---------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------
 #Part 4: Running the Application
 
 ##1.Start the backend server
