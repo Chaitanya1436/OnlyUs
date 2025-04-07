@@ -55,7 +55,7 @@ npm start
 
 
 #Runs on http://localhost:3000
---------------------------------------------------------------------------------
+---
 #🔧 Backend Setup (Node.js)
 
 # Navigate to backend
