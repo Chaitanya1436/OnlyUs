@@ -43,18 +43,18 @@ onlyus/ │ ├── onlyus-frontend/ # React frontend │ ├── public/ �
 # 🖥️ Frontend Setup (React)
 
 ---bash
-# Navigate to frontend
+Navigate to frontend
 cd onlyus/onlyus-frontend
 
-# Install dependencies
+Install dependencies
 npm install
 
-# Start the dev server
+Start the dev server
 npm start
 
 
 
-###Runs on http://localhost:3000
+#Runs on http://localhost:3000
 --------------------------------------------------------------------------------
 #🔧 Backend Setup (Node.js)
 
