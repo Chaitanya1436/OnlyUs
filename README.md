@@ -67,33 +67,39 @@ Start the server
 
 #Backend runs on http://localhost:5000
 -------------------------------------------------------------------------------
-###🛜 How It Works
-User lands on the homepage and selects their interest tags.
+### 🛜 How It Works
 
-Clicking GoOnlyUs requests camera/mic permissions.
+1. User lands on the homepage and selects their interest tags.
+2. Clicking **GoOnlyUs** requests camera/mic permissions.
+3. The system places them in a queue to match with someone compatible.
+4. Once paired, WebRTC connects both peers for live video/audio.
+5. Users can chat via text and click **Next** to skip to a new stranger.
 
-The system places them in a queue to match with someone compatible.
+---
 
-Once paired, WebRTC connects both peers for live video/audio.
+### 📸 Screenshots
 
-Users can chat via text and click Next to skip to a new stranger.
--------------------------------------------------------------------------------
-###📸 Screenshots
 Coming soon... (Add screenshots or GIF demos here once your UI is polished)
--------------------------------------------------------------------------------
-###🧪 Tech Stack
-Technology	Usage
-React.js	Frontend UI
-React Router	Navigation between pages
-Socket.io	Real-time communication
-WebRTC	Peer-to-peer video/audio calls
-Node.js	Backend server
-Express.js	HTTP server for API & Socket.io
-CORS	Handles cross-origin requests
 
+---
 
-###🔐 Environment Variables
-#Create a .env file in your onlyus-backend folder with the following (if needed):
+### 🧪 Tech Stack
+
+| Technology     | Usage                              |
+|----------------|------------------------------------|
+| React.js       | Frontend UI                        |
+| React Router   | Navigation between pages           |
+| Socket.io      | Real-time communication            |
+| WebRTC         | Peer-to-peer video/audio calls     |
+| Node.js        | Backend server                     |
+| Express.js     | HTTP server for API & Socket.io    |
+| CORS           | Handles cross-origin requests      |
+
+---
+
+### 🔐 Environment Variables
+
+Create a `.env` file in your `onlyus-backend` folder with the following (if needed):
 PORT=5000
 
 ###🧰 Available Scripts
