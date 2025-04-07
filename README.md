@@ -23,9 +23,23 @@ OnlyUs is a real-time video chat platform that connects strangers from around th
 
 ------------------------------------------------------------------------------
 
-## 📁 Project Structure
+## 📁 Project Structure after setting up(First Read Setup Guide on "How to Set up?")
 
-onlyus/ │ ├── onlyus-frontend/ # React frontend │ ├── public/ │ └── src/ │ ├── components/ │ ├── pages/ │ └── App.js │ └── onlyus-backend/ # Node.js backend ├── server.js └── matchmaker.js
+onlyus/
+|
+|-package
+|-package-lock
+|-node_modules
+|
+|
+├── backend/
+│   ├── server.js
+│   ├── package.json
+│   └── ...
+└── frontend/
+    ├── src/
+    ├── package.json
+    └── ...
 
 
 
