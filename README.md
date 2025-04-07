@@ -1,4 +1,4 @@
-##### 🎥 OnlyUs - Connect with Strangers via Video & Chat
+### 🎥 OnlyUs - Connect with Strangers via Video & Chat
 
 OnlyUs is a real-time video chat platform that connects strangers from around the world. Users can join based on shared interests and communicate through live webcam and text chat. The platform offers a smooth, black-themed interface with purple accents for a sleek and modern look.
 
