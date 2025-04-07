@@ -58,18 +58,16 @@ npm start
 ---
 #🔧 Backend Setup (Node.js)
 
-# Navigate to backend
-cd onlyus/onlyus-backend
+Navigate to backend
+->cd onlyus/onlyus-backend
+->npm install
 
-# Install dependencies
-npm install
+Start the server
+->npm run dev
 
-# Start the server
-npm run dev
-
-###Backend runs on http://localhost:5000
+#Backend runs on http://localhost:5000
 -------------------------------------------------------------------------------
-#🛜 How It Works
+###🛜 How It Works
 User lands on the homepage and selects their interest tags.
 
 Clicking GoOnlyUs requests camera/mic permissions.
