@@ -31,16 +31,16 @@ onlyus/ │ ├── onlyus-frontend/ # React frontend │ ├── public/ �
 
 ------------------------------------------------------------------------------
 
-## ⚙️ Getting Started
+### ⚙️ Getting Started
 
-### 📦 Prerequisites
+# 📦 Prerequisites
 
 - Node.js >= 14.x
 - npm >= 6.x
 
 ---
 
-### 🖥️ Frontend Setup (React)
+# 🖥️ Frontend Setup (React)
 
 ---bash
 # Navigate to frontend
@@ -56,7 +56,7 @@ npm start
 
 ###Runs on http://localhost:3000
 --------------------------------------------------------------------------------
-###🔧 Backend Setup (Node.js)
+#🔧 Backend Setup (Node.js)
 
 # Navigate to backend
 cd onlyus/onlyus-backend
@@ -69,7 +69,7 @@ npm run dev
 
 ###Backend runs on http://localhost:5000
 -------------------------------------------------------------------------------
-###🛜 How It Works
+#🛜 How It Works
 User lands on the homepage and selects their interest tags.
 
 Clicking GoOnlyUs requests camera/mic permissions.
