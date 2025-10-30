@@ -25,6 +25,7 @@ OnlyUs is a real-time video chat platform that connects strangers from around th
 
 ## 📁 Project Structure after setting up(First Read Setup Guide on "How to Set up?")
 
+```
 onlyus/
 |
 |-package
@@ -40,7 +41,7 @@ onlyus/
     ├── src/
     ├── package.json
     └── ...
-
+```
 
 
 ------------------------------------------------------------------------------
