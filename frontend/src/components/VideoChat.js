@@ -19,6 +19,7 @@ const VideoChat = () => {
   const [videoOn, setVideoOn] = useState(true);
   const [currentMessage, setCurrentMessage] = useState('');
   const [showChat, setShowChat] = useState(false);
+  const [onlineUsers, setOnlineUsers] = useState(0);
 
   const localVideoRef = useRef(null);
   const remoteVideoRef = useRef(null);
@@ -83,58 +84,43 @@ const VideoChat = () => {
   const setupSocketListeners = () => {
     const socket = socketRef.current;
 
-    socket.on('matched', async ({ partnerId }) => {
-      console.log("✅ Matched with partner");
+    // 🔥 USER COUNT
+    socket.on('online-users', (count) => {
+      setOnlineUsers(count);
+    });
 
+    socket.on('matched', async ({ partnerId }) => {
       setConnecting(false);
       setConnected(true);
 
       await setupPeerConnection();
 
-      // 👇 ONLY ONE USER CREATES OFFER
       if (socketRef.current.id < partnerId) {
-        console.log("🎯 I create offer");
         createOffer();
-      } else {
-        console.log("👂 Waiting for offer");
       }
     });
 
     socket.on('offer', async (offer) => {
-      console.log("Received offer");
       let pc = peerConnectionRef.current;
       if (!pc) pc = await setupPeerConnection();
 
-      try {
-        await pc.setRemoteDescription(new RTCSessionDescription(offer));
-        const answer = await pc.createAnswer();
-        await pc.setLocalDescription(answer);
-        socket.emit('answer', answer);
-      } catch (err) {
-        console.error("Offer handling error:", err);
-      }
+      await pc.setRemoteDescription(new RTCSessionDescription(offer));
+      const answer = await pc.createAnswer();
+      await pc.setLocalDescription(answer);
+      socket.emit('answer', answer);
     });
 
     socket.on('answer', async (answer) => {
-      console.log("Received answer");
       const pc = peerConnectionRef.current;
       if (pc) {
-        try {
-          await pc.setRemoteDescription(new RTCSessionDescription(answer));
-        } catch (err) {
-          console.error("Answer error:", err);
-        }
+        await pc.setRemoteDescription(new RTCSessionDescription(answer));
       }
     });
 
     socket.on('ice-candidate', async (candidate) => {
       const pc = peerConnectionRef.current;
       if (pc) {
-        try {
-          await pc.addIceCandidate(new RTCIceCandidate(candidate));
-        } catch (err) {
-          console.error("ICE error:", err);
-        }
+        await pc.addIceCandidate(new RTCIceCandidate(candidate));
       }
     });
 
@@ -143,14 +129,15 @@ const VideoChat = () => {
     });
 
     socket.on('user-disconnected', () => {
-      console.log("Partner disconnected");
       setConnected(false);
       setConnecting(true);
       setMessages([]);
+
       if (peerConnectionRef.current) {
         peerConnectionRef.current.close();
         peerConnectionRef.current = null;
       }
+
       setTimeout(findMatch, 1000);
     });
   };
@@ -282,7 +269,7 @@ const VideoChat = () => {
 
       </div>
 
-      {/* CHAT SECTION (TOGGLE) */}
+      {/* CHAT SECTION */}
       {showChat && (
         <div className="chat-area">
 
@@ -339,6 +326,11 @@ const VideoChat = () => {
           Exit
         </button>
 
+      </div>
+
+      {/* 🔥 ADD THIS EXACTLY HERE */}
+      <div className="online-count">
+        🟢 {onlineUsers} online
       </div>
 
     </div>
