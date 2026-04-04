@@ -7,7 +7,7 @@ import micOffIcon from '../assets/micoff.png';
 import videoOnIcon from '../assets/videoon.png';
 import videoOffIcon from '../assets/videooff.png';
 import chatIcon from '../assets/chat.png';
-import chatCloseIcon from '../assets/chatclose.png';
+
 
 
 const SOCKET_URL = process.env.REACT_APP_SOCKET_URL || "http://localhost:5000";
