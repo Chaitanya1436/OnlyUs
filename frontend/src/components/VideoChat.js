@@ -162,9 +162,9 @@ const VideoChat = () => {
       iceServers: [
         { urls: 'stun:stun.l.google.com:19302' },
         {
-          urls: 'turn:global.relay.metered.ca:80',
-          username: 'openrelayproject',
-          credential: 'openrelayproject'
+          urls: "turn:global.relay.metered.ca:80",
+          username: "5229f16773c321b75133c0e2",
+          credential: "UalW6flpoi4wDhPr",
         }
       ]
     });
