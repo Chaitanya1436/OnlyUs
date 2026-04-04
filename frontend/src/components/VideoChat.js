@@ -2,6 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import io from 'socket.io-client';
 import './VideoChat.css';
+import micOnIcon from '../assets/micon.png';
+import micOffIcon from '../assets/micoff.png';
+import videoOnIcon from '../assets/videoon.png';
+import videoOffIcon from '../assets/videooff.png';
+import chatIcon from '../assets/chat.png';
+import chatCloseIcon from '../assets/chatclose.png';
 
 
 const SOCKET_URL = process.env.REACT_APP_SOCKET_URL || "http://localhost:5000";
@@ -239,6 +245,9 @@ const VideoChat = () => {
 
   return (
     <div className="video-chat-container">
+      <button className="exit-btn" onClick={goHome}>
+        ✖
+      </button>
 
       {/* VIDEO SECTION */}
       <div className="video-area">
@@ -272,6 +281,9 @@ const VideoChat = () => {
       {/* CHAT SECTION */}
       {showChat && (
         <div className="chat-area">
+          <button className="chat-close" onClick={() => setShowChat(false)}>
+            ✖
+          </button>
 
           <div className="chat-messages" ref={chatContainerRef}>
             {messages.map((msg, i) => (
@@ -306,24 +318,20 @@ const VideoChat = () => {
       {/* CONTROLS */}
       <div className="controls">
 
-        <button onClick={toggleMic}>
-          {micOn ? 'Mic is ON' : 'Mic is OFF'}
+        <button className="icon-btn" onClick={toggleMic}>
+          <img src={micOn ? micOnIcon : micOffIcon} alt="mic" />
         </button>
 
-        <button onClick={() => setShowChat(prev => !prev)}>
-          {showChat ? 'Hide Chat' : 'Show Chat'}
+        <button className="icon-btn" onClick={toggleVideo}>
+          <img src={videoOn ? videoOnIcon : videoOffIcon} alt="video" />
         </button>
 
-        <button onClick={toggleVideo}>
-          {videoOn ? 'Video is ON' : 'Video is OFF'}
+        <button className="icon-btn" onClick={() => setShowChat(true)}>
+          <img src={chatIcon} alt="chat" />
         </button>
 
-        <button className="next-button" onClick={nextMatch}>
-          Next Person
-        </button>
-
-        <button className="home-button" onClick={goHome}>
-          Exit
+        <button className="icon-btn next-btn" onClick={nextMatch}>
+          ⏭
         </button>
 
       </div>
