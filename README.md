@@ -1,7 +1,7 @@
 # 🎥 OnlyUs — Real-Time Stranger Video Chat
 
 **OnlyUs** is a real-time video chat platform that connects strangers instantly using **WebRTC + Socket.io**.
-Match randomly or based on interests and communicate through **live video + chat**.
+Matchs randomly or based on interests and communicate through **live video + chat**.
 
 > ⚡ Fast. Simple. Real-time.
 
