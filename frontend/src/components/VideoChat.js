@@ -26,7 +26,7 @@ const VideoChat = () => {
   const peerConnectionRef = useRef(null);
   const chatContainerRef = useRef(null);
   const localStreamRef = useRef(null);
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     let isMounted = true;
 
