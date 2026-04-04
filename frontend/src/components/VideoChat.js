@@ -7,6 +7,7 @@ import micOffIcon from '../assets/micoff.png';
 import videoOnIcon from '../assets/videoon.png';
 import videoOffIcon from '../assets/videooff.png';
 import chatIcon from '../assets/chat.png';
+import exitIcon from '../assets/exit.png';
 
 
 
@@ -246,7 +247,7 @@ const VideoChat = () => {
   return (
     <div className="video-chat-container">
       <button className="exit-btn" onClick={goHome}>
-        ✖
+        <img src={exitIcon} alt="exit" />
       </button>
 
       {/* VIDEO SECTION */}
@@ -326,12 +327,12 @@ const VideoChat = () => {
           <img src={videoOn ? videoOnIcon : videoOffIcon} alt="video" />
         </button>
 
-        <button className="icon-btn" onClick={() => setShowChat(true)}>
+        <button className="icon-btn" onClick={() => setShowChat(prev => !prev)}>
           <img src={chatIcon} alt="chat" />
         </button>
 
         <button className="icon-btn next-btn" onClick={nextMatch}>
-          ⏭
+          SKIP
         </button>
 
       </div>
