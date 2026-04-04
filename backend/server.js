@@ -22,6 +22,13 @@ const connectedUsers = new Map();
 io.on('connection', (socket) => {
   console.log(`✅ User connected: ${socket.id}`);
 
+  // 🔥 SEND USER COUNT
+  const sendUserCount = () => {
+    io.emit('online-users', connectedUsers.size);
+  };
+
+  sendUserCount();
+
   socket.on('find-match', (data) => {
     const { matchType, interests } = data;
     const user = { socketId: socket.id, interests: interests || [] };
@@ -46,27 +53,30 @@ io.on('connection', (socket) => {
 
       socket.emit('matched', { partnerId: match.socketId });
       io.to(match.socketId).emit('matched', { partnerId: socket.id });
-    } else {
-      console.log(`⏳ ${socket.id} added to ${matchType} waiting room`);
     }
   });
 
   socket.on('offer', (offer) => {
     const userData = connectedUsers.get(socket.id);
-    if (userData?.currentPartner) io.to(userData.currentPartner).emit('offer', offer);
+    if (userData?.currentPartner) {
+      io.to(userData.currentPartner).emit('offer', offer);
+    }
   });
 
   socket.on('answer', (answer) => {
     const userData = connectedUsers.get(socket.id);
-    if (userData?.currentPartner) io.to(userData.currentPartner).emit('answer', answer);
+    if (userData?.currentPartner) {
+      io.to(userData.currentPartner).emit('answer', answer);
+    }
   });
 
   socket.on('ice-candidate', (candidate) => {
     const userData = connectedUsers.get(socket.id);
-    if (userData?.currentPartner) io.to(userData.currentPartner).emit('ice-candidate', candidate);
+    if (userData?.currentPartner) {
+      io.to(userData.currentPartner).emit('ice-candidate', candidate);
+    }
   });
 
-  // FIXED: Chat no longer echoes back to sender
   socket.on('chat-message', (message) => {
     const userData = connectedUsers.get(socket.id);
     if (userData?.currentPartner) {
@@ -87,6 +97,7 @@ io.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log(`❌ User disconnected: ${socket.id}`);
+
     const userData = connectedUsers.get(socket.id);
 
     if (userData?.currentPartner) {
@@ -99,6 +110,9 @@ io.on('connection', (socket) => {
     waitingUsers.random = waitingUsers.random.filter(u => u.socketId !== socket.id);
     waitingUsers.interests = waitingUsers.interests.filter(u => u.socketId !== socket.id);
     connectedUsers.delete(socket.id);
+
+    // 🔥 UPDATE COUNT
+    sendUserCount();
   });
 });
 
