@@ -1,0 +1,223 @@
+# 🚀 ONLYUS — HOW TO RUN (COMPLETE GUIDE)
+
+---
+
+# 🧩 STEP 1 — DOWNLOAD PROJECT
+
+* Download ZIP or clone repo
+* Extract → open folder:
+
+```
+onlyus/
+```
+
+---
+
+# 🧩 STEP 2 — INSTALL DEPENDENCIES
+
+Open VS Code → open project folder
+
+---
+
+## 🔹 TERMINAL 1 (BACKEND)
+
+```bash
+cd backend
+npm install
+```
+
+---
+
+## 🔹 TERMINAL 2 (FRONTEND)
+
+```bash
+cd frontend
+npm install
+```
+
+---
+
+# 🧩 STEP 3 — DOWNLOAD NGROK
+
+1. Go to ngrok website
+2. Download (Windows ZIP)
+3. Extract zip
+
+You will get:
+
+```
+ngrok.exe
+```
+
+👉 Move it to:
+
+```
+onlyus/ngrok.exe
+```
+
+---
+
+# 🧩 STEP 4 — CREATE NGROK CONFIG FILE
+
+### 📁 Create file:
+
+```
+onlyus/ngrok.yml
+```
+
+---
+
+### 🔁 Replace with YOUR TOKEN:
+
+```yaml
+version: 2
+authtoken: YOUR_NGROK_AUTH_TOKEN
+
+tunnels:
+  backend:
+    proto: http
+    addr: 5000
+
+  frontend:
+    proto: http
+    addr: 3000
+```
+
+---
+
+⚠️ IMPORTANT:
+
+* Replace `YOUR_NGROK_AUTH_TOKEN`
+* NEVER push this file to GitHub
+
+---
+
+# 🧩 STEP 5 — GET YOUR WIFI IP
+
+```bash
+ipconfig
+```
+
+Find:
+
+```
+Wireless LAN adapter Wi-Fi
+IPv4 Address → 192.168.X.X
+```
+
+---
+
+# 🧩 STEP 6 — CREATE ENV FILE
+
+### 📁 `frontend/.env`
+
+```
+REACT_APP_SOCKET_URL=http://192.168.X.X:5000
+```
+
+👉 Replace with your IPv4
+
+---
+
+# 🧩 STEP 7 — RUN PROJECT (3 TERMINALS)
+
+---
+
+## 🔹 TERMINAL 1 — BACKEND
+
+```bash
+cd backend
+npm run dev
+```
+
+---
+
+## 🔹 TERMINAL 2 — FRONTEND
+
+```bash
+cd frontend
+npm start
+```
+
+---
+
+## 🔹 TERMINAL 3 — NGROK
+
+```bash
+cd onlyus
+.\ngrok.exe http 3000
+```
+
+---
+
+# 🧩 STEP 8 — COPY FRONTEND LINK
+
+You will see:
+
+```
+frontend → https://abc123.ngrok-free.dev
+backend  → https://xyz456.ngrok-free.dev
+```
+or 
+
+```
+https://akndawja.... -> http://localhost:3000
+```
+
+👉 Copy **URL**
+
+---
+
+# 🧩 STEP 9 — USE APP
+
+---
+
+## 👉 ON YOUR LAPTOP
+
+```
+http://localhost:3000
+```
+
+---
+
+## 👉 ON FRIEND DEVICE
+
+⚠️ CONNECT TO YOUR HOTSPOT
+
+```
+https://abc123.ngrok-free.dev
+```
+
+---
+
+# ⚠️ IMPORTANT RULES
+
+* Use 3 terminals (backend, frontend, ngrok)
+* Backend must run first
+* Frontend must run second
+* Ngrok must run last
+* Devices must be on same hotspot
+* `.env` must have correct IP
+* Keep ngrok running
+
+---
+
+# 🎯 DONE
+
+✔ App runs
+✔ Friend connects
+✔ Video + chat works
+✔ Backend logs visible
+
+---
+
+# 🔐 SECURITY NOTE
+
+Add this to `.gitignore`:
+
+```
+ngrok.yml
+frontend/.env
+```
+
+---

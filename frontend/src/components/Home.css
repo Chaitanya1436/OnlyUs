@@ -1,0 +1,112 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    height: 100vh;
+  }
+  
+  .logo-container {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .logo-container h1 {
+    font-size: 48px;
+    background: linear-gradient(90deg, #8c52ff, #c490ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+  }
+  
+  .logo-container p {
+    font-size: 18px;
+    color: #a0a0a0;
+  }
+  
+  .preferences-container {
+    background-color: #1a1a1a;
+    border-radius: 16px;
+    padding: 30px;
+    width: 100%;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+  
+  .preferences-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #8c52ff;
+  }
+  
+  .match-type, .interests-section {
+    margin-bottom: 25px;
+  }
+  
+  .match-type label, .interests-section label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  .toggle-container {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .toggle-container button {
+    flex: 1;
+    background-color: #2a2a2a;
+    color: #a0a0a0;
+  }
+  
+  .toggle-container button.active {
+    background-color: #8c52ff;
+    color: white;
+  }
+  
+  .input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .input-group input {
+    flex-grow: 1;
+  }
+  
+  .tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .tag {
+    background-color: #8c52ff30;
+    color: #c490ff;
+    padding: 6px 12px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .tag span {
+    cursor: pointer;
+    font-size: 18px;
+    line-height: 1;
+  }
+  
+  .start-button {
+    font-size: 20px;
+    padding: 15px 50px;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+  }
